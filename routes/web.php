@@ -24,19 +24,6 @@ Route::get('/user', function() {
     return "<h1> I'm user </h1>";
 });
 
-Route::get('client/add', function() {
-    DB::table('clients')->insert([
-        'name' => 'Miras',
-        'surname' => 'Nurlybai',
-        'age' => 19
-    ]);
-});
-
-Route::get('client', function(){
-   $client = Client::find(1);
-   return $client->name;
-});
-
 Route::get('post/create', function() {
     DB::table('post2')->insert([
         'title' => 'Text',
@@ -44,7 +31,7 @@ Route::get('post/create', function() {
     ]);
 });
 
-Route::get('post', function(){
+Route::get('/post', function(){
     $post = Post::find(2);
     return $post;
  });
