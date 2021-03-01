@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\Client;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +24,14 @@ Route::get('/user', function() {
     return "<h1> I'm user </h1>";
 });
 
-Route::get('post/create', function() {
-    DB::table('post2')->insert([
+Route::get('posts/create', function() {
+    DB::table('posts')->insert([
         'title' => 'Text',
-        'body' => 'some long text',
+        'body' => 'Some long text',
     ]);
 });
 
-Route::get('/post', function(){
-    $post = Post::find(2);
-    return $post;
+Route::get('/posts', function(){
+    $posts = Post::find(1);
+    return $posts;
  });
