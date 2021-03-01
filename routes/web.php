@@ -36,3 +36,15 @@ Route::get('client', function(){
    $client = Client::find(1);
    return $client->name;
 });
+
+Route::get('post/create', function() {
+    DB::table('post2')->insert([
+        'title' => 'Text',
+        'body' => 'some long text',
+    ]);
+});
+
+Route::get('post', function(){
+    $post = Post::find(2);
+    return $post;
+ });
