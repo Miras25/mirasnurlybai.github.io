@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +22,17 @@ Route::get('/', function () {
 
 Route::get('/user', function() {
     return "<h1> I'm user </h1>";
+});
+
+Route::get('client/add', function() {
+    DB::table('clients')->insert([
+        'name' => 'Miras',
+        'surname' => 'Nurlybai',
+        'age' => 19
+    ]);
+});
+
+Route::get('client', function(){
+   $client = Client::find(1);
+   return $client->name;
 });
