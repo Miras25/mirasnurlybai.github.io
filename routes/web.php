@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\BlockController;
+use App\Http\Controllers\BlogController;
 
 use App\Models\Blog;
 
@@ -28,10 +28,6 @@ Route::get('blog/add', function() {
     ]);
 });
 
-Route::get('blog', function() {
-    $blog = Blog::find(1);
-    return "$blog";
-});
 
-Route::get('b', [BlockController::class, 'index']);
+Route::get('blog', [BlogController::class, 'index']);
 
