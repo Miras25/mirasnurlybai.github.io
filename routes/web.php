@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\BlockController;
 
 use App\Models\Post;
 
@@ -24,14 +25,5 @@ Route::get('/user', function() {
     return "<h1> I'm user </h1>";
 });
 
-Route::get('posts/create', function() {
-    DB::table('posts')->insert([
-        'title' => 'Text',
-        'body' => 'Some long text',
-    ]);
-});
+Route::get('post', [BlockController::class, 'index']);
 
-Route::get('/posts', function(){
-    $posts = Post::find(1);
-    return $posts;
- });
