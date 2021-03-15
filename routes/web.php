@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\BlockController;
 
-use App\Models\Post;
+use App\Models\Blog;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +21,17 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/user', function() {
-    return "<h1> I'm user </h1>";
+Route::get('blog/add', function() {
+    DB::table('blog')->insert([
+        'title' => 'Summary',
+        'body'=> 'Im looking forward to summer'
+    ]);
 });
 
-Route::get('post', [BlockController::class, 'index']);
+Route::get('blog', function() {
+    $blog = Blog::find(1);
+    return "$blog";
+});
+
+Route::get('b', [BlockController::class, 'index']);
 
