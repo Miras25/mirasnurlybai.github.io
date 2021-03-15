@@ -20,4 +20,15 @@ class BlogController extends Controller
         ]);
         return back();
      }
+
+     public function get_blog($id) {
+         $blog = Blog::find($id);
+
+         if ($blog == null)
+         return response(['message' => 'user not found'], 404);
+
+         return view('blog.detail')->with(['blog' => $blog]);
+         
+
+     }
 }
