@@ -38,3 +38,9 @@ Route::post('blog/create', [BlogController::class, 'store'])->name('add-blog');
 
 Route::get('blog/{id}', [BlogController::class, 'get_blog']);
 
+Route::get('/form','App\Http\Controllers\UploadController@index');
+
+Route::post('/addimage','App\Http\Controllers\UploadController@store')->name('addphoto');
+
+Route::get('mail/send', 'MailController@send');
+
