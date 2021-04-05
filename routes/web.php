@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MailController;
 
 use App\Models\Blog;
 
@@ -42,5 +43,5 @@ Route::get('/form','App\Http\Controllers\UploadController@index');
 
 Route::post('/addimage','App\Http\Controllers\UploadController@store')->name('addphoto');
 
-Route::get('mail/send', 'MailController@send');
+Route::get('mail/send', 'App\Http\Controllers\MailController@send');
 
