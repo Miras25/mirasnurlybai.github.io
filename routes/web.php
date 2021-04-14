@@ -45,3 +45,7 @@ Route::post('/addimage','App\Http\Controllers\UploadController@store')->name('ad
 
 Route::get('mail/send', 'App\Http\Controllers\MailController@send');
 
+Route::get('/{lang}', function($lang){
+    App::setlocale($lang);
+    return view('index');
+});

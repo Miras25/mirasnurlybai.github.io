@@ -26,8 +26,13 @@ class Labmail extends Mailable
      *
      * @return $this
      */
-    public function build()
-    {
-        return $this->view('view.name');
+    public function build(){
+        return $this->from('190103094@stu.sdu.edu.kz');
+                    ->view('mails.demo')
+                    ->text('mails.demo_plain')
+                    ->with([
+                        'testVarOne' => '1',
+                        'testVarTwo' => '2',
+                    ]);
     }
 }

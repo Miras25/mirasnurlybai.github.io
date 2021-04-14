@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- Created By CodingNepal -->
 <html lang="en">
+<html lang="kz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +26,11 @@
             <div class="logo">
 <a href="#">Portfo<span>lio.</span></a></div>
 <ul class="menu">
-<li><a href="#home" class="menu-btn">Home</a></li>
-<li><a href="#about" class="menu-btn">About</a></li>
-<li><a href="#services" class="menu-btn">Services</a></li>
-<li><a href="#skills" class="menu-btn">Skills</a></li>
-<li><a href="#contact" class="menu-btn">Contact</a></li>
+<li><a href="#home"  class="menu-btn">{{__('lang.Home')}}</a></li>
+<li><a href="#about" class="menu-btn">{{__('lang.About')}}</a></li>
+<li><a href="#services" class="menu-btn">{{__('lang.Services')}}</a></li>
+<li><a href="#skills" class="menu-btn">{{__('lang.Skills')}}</a></li>
+<li><a href="#contact" class="menu-btn">{{__('lang.Contact')}}</a></li>
 </ul>
 <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -42,12 +43,12 @@
         <div class="max-width">
             <div class="home-content">
                 <div class="text-1">
-Hello, my name is</div>
+                {{__('lang.Hello')}}</div>
 <div class="text-2">
-Nurlybai Miras</div>
+{{__('lang.Name')}}</div>
 <div class="text-3">
-And I'm a <span class="typing"></span></div>
-<a href="#">Hire me</a>
+{{__('lang.And')}}<span class="typing"></span></div>
+<a href="#">{{__('lang.More')}}</a>
             </div>
 </div>
 </section>
